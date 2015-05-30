@@ -1,0 +1,31 @@
+.navbar {
+	max-height: 50px;
+}
+
+.signin-site-container {
+	display: table;
+	position: absolute;
+	height: 70%;
+	width: 100%;
+}
+
+.signin-vertical-middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.signin-horizontal-middle {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 330px;
+	padding: 15px;
+}
+
+.signin-button {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.signin-form h2 {
+	margin-bottom: 30px;
+}

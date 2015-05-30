@@ -1,0 +1,27 @@
+.navbar {
+	max-height: 50px;
+}
+
+.new-contact-input {
+	margin-bottom: 14px;
+}
+
+.contact-list > li {
+	font-size: 110%;
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+
+.sender-name {
+	font-size: 85%;
+	font-weight: bold;
+}
+
+.message {
+	margin-bottom: 10px;
+}
+
+.new-message-input textarea {
+	width: 100%;
+	resize: none;
+}
