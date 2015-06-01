@@ -1,0 +1,26 @@
+{
+  "name": "jst-chat",
+  "version": "1.0.0",
+  "description": "Beadandó feladat JavaScript technológiák kurzusra",
+  "engines": {
+    "iojs": "2.x.x"
+  },
+  "main": "server/main.js",
+  "scripts": {
+    "test": "",
+    "start": "node server/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m4w4q7/jst-chat.git"
+  },
+  "author": "m4w4q7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m4w4q7/jst-chat/issues"
+  },
+  "homepage": "https://github.com/m4w4q7/jst-chat#readme",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+}
