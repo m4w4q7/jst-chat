@@ -29,11 +29,12 @@
 				<div class="signin-horizontal-middle">
 
 					<!-- Sign in -->
-					<form class="signin-form" action="index.html">
+					<form id="signin-form" action="api/signin" method="post">
 						<h2>Please sign in</h2>
-						<input type="text" class="form-control" placeholder="Username" required autofocus>
-						<input type="password" class="form-control" placeholder="Password" required>
-						<button class="btn btn-lg btn-primary btn-block signin-button" type="submit">Sign in</button>
+						<input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+						<input id="signin-password" type="password" class="form-control" placeholder="Password" required>
+						<input id="signin-encrypted-password" type="hidden" name="password">
+						<button type="submit" class="btn btn-lg btn-primary btn-block signin-button">Sign in</button>
 						<small>
 							Don't have an account yet? <a data-toggle="modal" data-target="#register-modal">Register</a> here!<br>
 						</small>
@@ -55,11 +56,11 @@
 
 										<div class="form-group">
 											<label for="register-username">Username</label>
-											<input type="text" class="form-control" id="register-username" placeholder="Username" required>
+											<input type="text" name="username" class="form-control" id="register-username" placeholder="Username" required>
 										</div>
 										<div class="form-group">
 											<label for="register-password">Password</label>
-											<input type="password" class="form-control" id="register-password" placeholder="Password" required>
+											<input type="password" name="password" class="form-control" id="register-password" placeholder="Password" required>
 										</div>
 										<div class="form-group">
 											<label for="register-confirm-password">Confirm password</label>

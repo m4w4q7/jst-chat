@@ -7,8 +7,9 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
 ##Felhasznált technológiák
 * Szerver:
  * io.js
- * ES6 (class, let, Promise)
- * Express  
+ * ES6 (class, let, Promise, enhanced object literal)
+ * Express (body-parser, session, router, static)
+ * Passport (local strategy)
 * Kliens:
  * Bootstrap
  * jQuery
@@ -25,7 +26,11 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
 * regisztráció
  * szerver oldal adatbázisba perzisztál
  * kliens oldalon SHA-256 titkosítás
- * hibakezelés (kitöltetlen mező, jelszavak nem egyeznek, már létezik felhasználó a megadott névvel, egyéb szerver hiba)
+ * hibakezelés (üres mező, jelszavak nem egyeznek, már létezik felhasználó a megadott névvel, egyéb szerver hiba)
+* autentikáció
+ * attól függ, hogy mit mutat a root, hogy be van-e lépve a felhasználó 
+ * csak valid névvel és jelszóval lehet belépni
+ * ki lehet lépni
 
 
 Még sok dolog van hátra...
