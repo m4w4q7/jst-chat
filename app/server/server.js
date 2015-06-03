@@ -18,6 +18,9 @@ class Server {
 
 
 	init() {
+		this._expressServer.set('view engine', 'jade');
+		this._expressServer.set('views', path.join(__dirname, '/../views'));
+
 		this._expressServer.use(this._getMiddleware());
 		return this;
 	}
@@ -34,7 +37,7 @@ class Server {
 			bodyParser.urlencoded({ extended: false }),
 			expressSession({
 				secret: "W9cEe5KRpGWcKgkD", // Don't look at this! :)
-				resave: "false",
+				resave: true,
 				saveUninitialized: false
 			}),
 			authentication.getMiddleware(),

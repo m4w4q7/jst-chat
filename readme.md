@@ -8,7 +8,8 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
 * Szerver:
  * io.js
  * ES6 (class, let, Promise, enhanced object literal)
- * Express (body-parser, session, router, static)
+ * Express (body-parser, session, router, static, views)
+ * Jade
  * Passport (local strategy)
 * Kliens:
  * Bootstrap
@@ -21,7 +22,7 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
  * CDN: cdnjs, MaxCDN, Google APIs
 
 ##Eddig elkészült:
-* szerver / statikus fájlkiszolgálás
+* szerver / fájlkiszolgálás
 * nagyjából a felület
 * regisztráció
  * szerver oldal adatbázisba perzisztál
@@ -31,6 +32,6 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
  * attól függ, hogy mit mutat a root, hogy be van-e lépve a felhasználó 
  * csak valid névvel és jelszóval lehet belépni
  * ki lehet lépni
-
+ * bejelentkezett felhasználóknak a nevük jelenik meg a jobb felső sarokban
 
 Még sok dolog van hátra...

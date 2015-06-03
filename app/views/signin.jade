@@ -1,0 +1,53 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title JST-Chat
+		link(rel='stylesheet', href='lib/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='css/signin.css')
+		script(src='lib/bootstrap/assets/js/ie10-viewport-bug-workaround.js')
+		//if lt IE 9
+			script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+			script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+		script(src='//cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha256.js')
+		script(src='js/signin.js')
+	body
+		nav.navbar.navbar-default
+			span.navbar-brand JST-Chat
+		.signin-site-container
+			.signin-vertical-middle
+				.signin-horizontal-middle
+					form#signin-form(action='api/signin', method='post')
+						h2 Please sign in
+						input.form-control(type='text', name='username', placeholder='Username', required='', autofocus='')
+						input#signin-password.form-control(type='password', placeholder='Password', required='')
+						input#signin-encrypted-password(type='hidden', name='password')
+						button.btn.btn-lg.btn-primary.btn-block.signin-button(type='submit') Sign in
+						small Don't have an account yet?
+							a(data-toggle='modal', data-target='#register-modal') Register
+							|  now!
+							br
+					#register-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+						.modal-dialog
+							.modal-content
+								form#register-form
+									.modal-header
+										button.close(type='button', data-dismiss='modal', aria-label='Close')
+											span(aria-hidden='true') ×
+										h4.modal-title Register
+									.modal-body
+										.form-group
+											label(for='register-username') Username
+											input#register-username.form-control(type='text', name='username', placeholder='Username', required='')
+										.form-group
+											label(for='register-password') Password
+											input#register-password.form-control(type='password', name='password', placeholder='Password', required='')
+										.form-group
+											label(for='register-confirm-password') Confirm password
+											input#register-confirm-password.form-control(type='password', placeholder='Password again', required='')
+									.modal-footer
+										button.btn.btn-primary(type='submit') Register

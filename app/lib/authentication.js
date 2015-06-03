@@ -35,6 +35,10 @@ class Authentication {
 		return request.isAuthenticated();
 	}
 
+	getAuthenticatedUser(request) {
+		return request.user;
+	}
+
 
 	_configurePassport() {
 		passport.use('local', new LocalStrategy(function (username, password, done) {
