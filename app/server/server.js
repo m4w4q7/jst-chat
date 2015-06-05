@@ -8,6 +8,7 @@ let expressSession = require('express-session');
 
 let router = require('./router.js');
 let authentication = require('../lib/authentication.js');
+let sessionStore = require('../database/sessions/session-store.js');
 
 
 class Server {
@@ -37,8 +38,10 @@ class Server {
 			bodyParser.urlencoded({ extended: false }),
 			expressSession({
 				secret: "W9cEe5KRpGWcKgkD", // Don't look at this! :)
+				store: sessionStore,
 				resave: true,
-				saveUninitialized: false
+				saveUninitialized: false,
+				unset: 'destroy'
 			}),
 			authentication.getMiddleware(),
 			router,
