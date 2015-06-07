@@ -1,8 +1,8 @@
 'use strict';
 
-var path = require('path');
-var NeDB = require('nedb');
-var ExpressSessionStore = require('express-session/session/store');
+let path = require('path');
+let NeDB = require('nedb');
+let ExpressSessionStore = require('express-session/session/store');
 
 
 class SessionStore extends ExpressSessionStore {
@@ -13,7 +13,7 @@ class SessionStore extends ExpressSessionStore {
 			filename: path.join(__dirname, 'datafile.nedb'),
 			autoload: true
 		});
-		this._database.persistence.setAutocompactionInterval(300000);
+		this._database.persistence.setAutocompactionInterval(120000);
 	}
 
 

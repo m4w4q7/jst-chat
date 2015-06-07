@@ -35,8 +35,19 @@ class Authentication {
 		return request.isAuthenticated();
 	}
 
+
+	getNameOfAuthenticatedUser(request) {
+		return request.session.passport.user;
+	}
+
+
 	getAuthenticatedUser(request) {
-		return request.user;
+		return userRepository.getUserForName(request.session.passport.user)
+			.then(function (user) {
+				done(null, user);
+			}).catch(function (err) {
+				done(err);
+			});
 	}
 
 
@@ -61,12 +72,7 @@ class Authentication {
 		});
 
 		passport.deserializeUser(function (username, done) {
-			userRepository.getUserForName(username)
-				.then(function (user) {
-					done(null, user);
-				}).catch(function (err) {
-					done(err);
-				});
+			done(null, username);
 		});
 	}
 }

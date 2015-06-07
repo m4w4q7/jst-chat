@@ -7,14 +7,16 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
 ##Felhasznált technológiák
 * Szerver:
  * io.js
- * ES6 (class, let, Promise, enhanced object literal)
+ * ES6 (class, let, Promise, enhanced object literal, tepmlate string)
  * Express (body-parser, session, router, static, views)
  * Jade
  * Passport (local strategy)
+ * socket.io
 * Kliens:
  * Bootstrap
  * jQuery
  * CryptoJS / SHA-256
+ * socket.io
 * Egyéb:
  * VCS: git (repo: GitHub)
  * CI: Codeship
@@ -33,5 +35,6 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
  * csak valid névvel és jelszóval lehet belépni
  * ki lehet lépni
  * bejelentkezett felhasználóknak a nevük jelenik meg a jobb felső sarokban
+ * a munkamenetek szerver újraindítása esetén sem törlődnek
 
 Még sok dolog van hátra...

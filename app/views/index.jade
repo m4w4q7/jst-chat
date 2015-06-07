@@ -13,6 +13,8 @@ html(lang='en')
 			script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
 		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+		script(src='//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js')
+		script(src='js/index.js')
 	body
 		nav.navbar.navbar-default
 			.container-fluid
@@ -41,22 +43,22 @@ html(lang='en')
 				.col-xs-8.col-sm-9.col-sm-10
 					.message
 						span.sender-name Aladár:
-						| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare elementum venenatis. Nullam ut eros in sem vulputate mattis in sit amet neque. Sed placerat velit nec risus volutpat, a malesuada nisl scelerisque. Praesent et nulla eget nisl venenatis laoreet. Morbi et consequat dolor. Pellentesque id purus mollis, ultricies nunc et, congue ipsum. Maecenas ultricies, purus a sagittis elementum, nunc tortor mollis ipsum, vitae rutrum nunc odio vel arcu. Maecenas blandit, leo in mattis dignissim, libero augue ornare enim, quis dictum dolor purus vel tortor. Curabitur lacus urna, placerat at placerat et, finibus eu tellus.
+						|  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare elementum venenatis. Nullam ut eros in sem vulputate mattis in sit amet neque. Sed placerat velit nec risus volutpat, a malesuada nisl scelerisque. Praesent et nulla eget nisl venenatis laoreet. Morbi et consequat dolor. Pellentesque id purus mollis, ultricies nunc et, congue ipsum. Maecenas ultricies, purus a sagittis elementum, nunc tortor mollis ipsum, vitae rutrum nunc odio vel arcu. Maecenas blandit, leo in mattis dignissim, libero augue ornare enim, quis dictum dolor purus vel tortor. Curabitur lacus urna, placerat at placerat et, finibus eu tellus.
 					.message
 						span.sender-name Béla:
-						| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare elementum venenatis. Nullam ut eros in sem vulputate mattis in sit amet neque. Sed placerat velit nec risus volutpat, a malesuada nisl scelerisque. Praesent et nulla eget nisl venenatis laoreet. Morbi et consequat dolor. Pellentesque id purus mollis, ultricies nunc et, congue ipsum. Maecenas ultricies, purus a sagittis elementum, nunc tortor mollis ipsum, vitae rutrum nunc odio vel arcu. Maecenas blandit, leo in mattis dignissim, libero augue ornare enim, quis dictum dolor purus vel tortor. Curabitur lacus urna, placerat at placerat et, finibus eu tellus.
+						|  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare elementum venenatis. Nullam ut eros in sem vulputate mattis in sit amet neque. Sed placerat velit nec risus volutpat, a malesuada nisl scelerisque. Praesent et nulla eget nisl venenatis laoreet. Morbi et consequat dolor. Pellentesque id purus mollis, ultricies nunc et, congue ipsum. Maecenas ultricies, purus a sagittis elementum, nunc tortor mollis ipsum, vitae rutrum nunc odio vel arcu. Maecenas blandit, leo in mattis dignissim, libero augue ornare enim, quis dictum dolor purus vel tortor. Curabitur lacus urna, placerat at placerat et, finibus eu tellus.
 					.message
 						span.sender-name Aladár:
-						| Lorem ipsum dolor
+						|  Lorem ipsum dolor
 					.message
 						span.sender-name Béla:
-						| sit amet
+						|  sit amet
 					.message
 						span.sender-name Aladár:
-						| Lorem ipsum dolor
+						|  Lorem ipsum dolor
 					.message
 						span.sender-name Béla:
-						| sit amet
+						|  sit amet
 					.new-message-input
 						form
 							textarea(rows='3')

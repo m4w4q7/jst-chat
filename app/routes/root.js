@@ -5,7 +5,7 @@ let authentication = require('../lib/authentication.js');
 function root(request, response) {
 	if (authentication.isAuthenticated(request)) {
 		response.render('index', {
-			username: authentication.getAuthenticatedUser(request).username
+			username: authentication.getNameOfAuthenticatedUser(request)
 		});
 	} else {
 		response.render('signin');
