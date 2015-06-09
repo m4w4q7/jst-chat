@@ -32,12 +32,12 @@ html(lang='en', ng-app='jstChat')
 			.row
 				.col-xs-4.col-sm-3.col-md-2(ng-controller='contactList as contactListCtrl')
 					.add-contact.input-group
-						input.form-control(type='text', placeholder='Add new contact' ng-model='contactListCtrl.newContactName')
+						input.form-control(type='text', placeholder='contact name' ng-model='contactListCtrl.contactInput')
 						span.input-group-btn
-							button.btn.btn-default(type='button', ng-click='contactListCtrl.addContact(contactListCtrl.newContactName)' aria-label='Add')
+							button.btn.btn-default(type='button', ng-click='contactListCtrl.addContact(contactListCtrl.contactInput)' aria-label='Add')
 								span.glyphicon.glyphicon-plus(aria-hidden='true')
 					ul.contact-list.list-unstyled
-						li(ng-repeat='contact in contactListCtrl.contacts | orderBy') {{ contact }}
+						li(ng-repeat='contact in contactListCtrl.contacts | filter:contactListCtrl.contactInput | orderBy') {{ contact }}
 				.col-xs-8.col-sm-9.col-sm-10
 					.message
 						span.sender-name Aladár:
