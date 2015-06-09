@@ -6,6 +6,7 @@ let User = require('./scheme.js');
 
 
 class userRepository {
+
 	constructor() {
 		this._database = new NeDB({
 			filename: path.join(__dirname, 'datafile.nedb'),
@@ -18,16 +19,25 @@ class userRepository {
 		})
 	}
 
+
 	addUser(attributes) {
 		this._database.insert(new User(attributes));
 	}
 
-	getUserForName(name) {
+
+	addContact(username, contactName) {
+		this._database.update(
+			{ username },
+			{ $addToSet: { contacts: contactName } },
+			{ multi: false }
+		)
+	}
+
+
+	getUser(username) {
 		return new Promise((function(resolve, reject) {
 			this._database.findOne(
-				{
-					username: name
-				},
+				{ username },
 				function (err, doc) {
 					if (err) return reject(err);
 					return resolve(doc);

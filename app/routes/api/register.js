@@ -15,7 +15,7 @@ function register(request, response) {
 		return;
 	}
 
-	userRepository.getUserForName(request.body.username)
+	userRepository.getUser(request.body.username)
 		.then(function(user) {
 			if (user) {
 				response.send(createResponse(false, 'User already exists'));

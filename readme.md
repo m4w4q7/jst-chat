@@ -36,5 +36,10 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
  * ki lehet lépni
  * bejelentkezett felhasználóknak a nevük jelenik meg a jobb felső sarokban
  * a munkamenetek szerver újraindítása esetén sem törlődnek
+* kontaktok
+ * a kontaktok bal oldalon listázódnak
+ * hibaüzenet, ha olyat próbálunk felvenni, aki nincs az adatbázisban
+ * hibaüzenet, ha olyat próbálunk felvenni, aki már a kontaktjaink közt szerepel
+ * egyébként az új kontakt azonnal felkerül a kontaktlistára minden olyan kliensnél, aki az adott feéhasználóval volt belépve, és az adatbázis is frissül 
 
 Még sok dolog van hátra...

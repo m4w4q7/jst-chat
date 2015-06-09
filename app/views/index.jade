@@ -30,16 +30,12 @@ html(lang='en')
 		.container-fluid
 			.row
 				.col-xs-4.col-sm-3.col-md-2
-					.add-contact-input.input-group
-						input.form-control(type='text', placeholder='Add new contact')
+					.add-contact.input-group
+						input#add-contact-input.form-control(type='text', placeholder='Add new contact')
 						span.input-group-btn
-							button.btn.btn-default(type='button', onclick="alert('The user does not exist');", aria-label='Add')
+							button#add-contact-button.btn.btn-default(type='button', aria-label='Add')
 								span.glyphicon.glyphicon-plus(aria-hidden='true')
-					ul.contact-list.list-unstyled
-						li Aladár
-						li Béla
-						li Cecília
-						li Dénes
+					ul#contact-list.list-unstyled
 				.col-xs-8.col-sm-9.col-sm-10
 					.message
 						span.sender-name Aladár:

@@ -41,19 +41,9 @@ class Authentication {
 	}
 
 
-	getAuthenticatedUser(request) {
-		return userRepository.getUserForName(request.session.passport.user)
-			.then(function (user) {
-				done(null, user);
-			}).catch(function (err) {
-				done(err);
-			});
-	}
-
-
 	_configurePassport() {
 		passport.use('local', new LocalStrategy(function (username, password, done) {
-			userRepository.getUserForName(username)
+			userRepository.getUser(username)
 				.then(function (user) {
 					if (!user) return done(null, false);
 					if (password != user.password) return done(null, false);
