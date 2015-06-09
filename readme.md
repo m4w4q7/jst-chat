@@ -14,9 +14,10 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
  * socket.io
 * Kliens:
  * Bootstrap
+ * AngularJS
+ * socket.io
  * jQuery
  * CryptoJS / SHA-256
- * socket.io
 * Egyéb:
  * VCS: git (repo: GitHub)
  * CI: Codeship
@@ -27,19 +28,19 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
 * szerver / fájlkiszolgálás
 * nagyjából a felület
 * regisztráció
- * szerver oldal adatbázisba perzisztál
+ * a felhasználók adatai a szerver újraindítása esetén sem vesznek el
  * kliens oldalon SHA-256 titkosítás
  * hibakezelés (üres mező, jelszavak nem egyeznek, már létezik felhasználó a megadott névvel, egyéb szerver hiba)
 * autentikáció
  * attól függ, hogy mit mutat a root, hogy be van-e lépve a felhasználó 
  * csak valid névvel és jelszóval lehet belépni
  * ki lehet lépni
- * bejelentkezett felhasználóknak a nevük jelenik meg a jobb felső sarokban
+ * bejelentkezett felhasználóknak megjelenik a neve a jobb felső sarokban
  * a munkamenetek szerver újraindítása esetén sem törlődnek
 * kontaktok
  * a kontaktok bal oldalon listázódnak
  * hibaüzenet, ha olyat próbálunk felvenni, aki nincs az adatbázisban
  * hibaüzenet, ha olyat próbálunk felvenni, aki már a kontaktjaink közt szerepel
- * egyébként az új kontakt azonnal felkerül a kontaktlistára minden olyan kliensnél, aki az adott feéhasználóval volt belépve, és az adatbázis is frissül 
+ * egyébként az új kontakt azonnal felkerül a kontaktlistára minden olyan kliensnél, aki az adott felhasználóval volt belépve, és az adatbázis is frissül 
 
 Még sok dolog van hátra...
