@@ -4,6 +4,10 @@ _Production: [http://jst-chat.herokuapp.com/](http://jst-chat.herokuapp.com/)_
 
 Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/jstech.html) kurzusra
 
+##Indítás
+1. npm install
+2. npm run buildstart (vagy: gulp build; npm start;)
+
 ##Felhasznált technológiák
 * Szerver:
  * io.js
@@ -18,11 +22,14 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
  * socket.io
  * jQuery
  * CryptoJS / SHA-256
+ * ES6 (class, arrow functions)
+ * modulok (Browserify)
 * Egyéb:
  * VCS: git (repo: GitHub)
  * CI: Codeship
  * deploy: Heroku
  * CDN: cdnjs, MaxCDN, Google APIs
+ * build system: gulp (Browserify, Babel, uglify)
 
 ##Eddig elkészült:
 * szerver / fájlkiszolgálás

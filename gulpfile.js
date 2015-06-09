@@ -1,17 +1,17 @@
 'use strict';
 
-var browserify = require('browserify');
 var gulp = require('gulp');
+var browserify = require('browserify');
+var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
-var gutil = require('gulp-util');
-var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
-var babelify = require('babelify');
+var uglify = require('gulp-uglify');
+var gutil = require('gulp-util');
 
 gulp.task('browserify', function () {
 	return browserify({
-			entries: './client/index/index.js',
+			entries: './client/index/main.js',
 			debug: true,
 			transform: [babelify]
 		})
@@ -22,7 +22,7 @@ gulp.task('browserify', function () {
 		.pipe(uglify())
 		.on('error', gutil.log)
 		.pipe(sourcemaps.write('../map/'))
-		.pipe(gulp.dest('./app/public/js/'));
+		.pipe(gulp.dest('./server/public/js/'));
 });
 gulp.task('build', ['browserify']);
 gulp.task('default', ['build']);

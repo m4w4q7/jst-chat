@@ -8,8 +8,8 @@ let bodyParser = require('body-parser');
 let expressSession = require('express-session');
 
 let router = require('./router.js');
-let authentication = require('../lib/authentication.js');
-let messenger = require('../lib/messenger.js');
+let authentication = require('./authentication.js');
+let messenger = require('./messenger.js');
 let sessionStore = require('../database/sessions/session-store.js');
 
 

@@ -5,13 +5,12 @@
   "engines": {
     "iojs": "2.x.x"
   },
-  "main": "app/main.js",
+  "main": "server/main.js",
   "scripts": {
     "test": "",
-    "start": "node app/main.js",
-    "buildstart": "node app/main.js",
-    "prebuildstart": "gulp build"
-
+    "start": "node server/main.js",
+    "buildstart": "node server/main.js",
+    "prebuildstart": "./node_modules/.bin/gulp build"
   },
   "repository": {
     "type": "git",
