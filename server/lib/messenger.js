@@ -37,6 +37,11 @@ class Messenger {
 
 
 			addContact(socket, username, contactName) {
+				if (username === contactName) {
+					socket.emit('jstcError', 'You can\'t add yourself as a contact!');
+					return;
+				}
+
 				userRepository.getUser(contactName).then(function(contact) {
 					if (!contact) {
 						socket.emit('jstcError', 'The specified user does not exist!');

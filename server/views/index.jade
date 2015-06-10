@@ -34,7 +34,7 @@ html(lang='en', ng-app='jstChat')
 					.add-contact.input-group
 						input.form-control(type='text', placeholder='contact name' ng-model='contactListCtrl.contactInput')
 						span.input-group-btn
-							button.btn.btn-default(type='button', ng-click='contactListCtrl.addContact(contactListCtrl.contactInput)' aria-label='Add')
+							button.btn.btn-default(type='button', ng-click='contactListCtrl.addContact(contactListCtrl.contactInput); contactListCtrl.contactInput="";' aria-label='Add')
 								span.glyphicon.glyphicon-plus(aria-hidden='true')
 					ul.contact-list.list-unstyled
 						li(
@@ -48,4 +48,4 @@ html(lang='en', ng-app='jstChat')
 					.new-message-input(ng-show='messageListCtrl.isLoaded()')
 						form
 							textarea(rows='3' ng-model='messageListCtrl.newMessageInput')
-							button.btn.btn-primary.pull-right(type='button' ng-click='messageListCtrl.addMessage(messageListCtrl.newMessageInput); messageListCtrl.newMessageInput = ""') Send
+							button.btn.btn-primary.pull-right(type='button' ng-click='messageListCtrl.addMessage(messageListCtrl.newMessageInput); messageListCtrl.newMessageInput = "";') Send

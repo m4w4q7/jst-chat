@@ -47,9 +47,12 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
 * kontaktok
  * a kontaktok bal oldalon listázódnak
  * lexikografikus rendezés szerint listázódnak
+ * szűrhetőek
  * hibaüzenet, ha olyat próbálunk felvenni, aki nincs az adatbázisban
  * hibaüzenet, ha olyat próbálunk felvenni, aki már a kontaktjaink közt szerepel
- * egyébként az új kontakt azonnal felkerül a kontaktlistára minden olyan kliensnél, aki az adott felhasználóval volt belépve, és az adatbázis is frissül 
+ * hibaüzenet, ha saját magunkat akarjuk felvenni
+ * egyébként az új kontakt azonnal felkerül a kontaktlistára minden olyan kliensnél, aki az adott felhasználóval volt belépve
+ * szerver újraindítása esetén is megmaradnak 
 * üzenetek
  * kontaktra klikkelve megjelenek az eddigi üzenetek
  * lehet újat küldeni
