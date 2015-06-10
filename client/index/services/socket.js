@@ -5,7 +5,7 @@ class Socket {
 
 	constructor($window) {
 		this._socket = $window.io();
-		this._socket.on('jstc-error', (error) => { $window.alert(error); });
+		this._socket.on('jstcError', (error) => { $window.alert(error); });
 	};
 
 

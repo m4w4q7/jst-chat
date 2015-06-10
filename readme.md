@@ -50,5 +50,8 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
  * hibaüzenet, ha olyat próbálunk felvenni, aki nincs az adatbázisban
  * hibaüzenet, ha olyat próbálunk felvenni, aki már a kontaktjaink közt szerepel
  * egyébként az új kontakt azonnal felkerül a kontaktlistára minden olyan kliensnél, aki az adott felhasználóval volt belépve, és az adatbázis is frissül 
-
-Még sok dolog van hátra...
+* üzenetek
+ * kontaktra klikkelve megjelenek az eddigi üzenetek
+ * lehet újat küldeni
+ * minden kliens, aki a küldővel vagy a fogadóval van belépve, azonnal megkapja az üzenetet
+ * az üzenetek a szerver újraindítása esetén is megmaradnak

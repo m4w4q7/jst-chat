@@ -31,6 +31,11 @@ class ContactList {
 	}
 
 
+	getMessages(contactName) {
+		this._socket.emit('getMessages', contactName);
+	}
+
+
 	static get withDependencies() {
 		return _withDependencies;
 	}

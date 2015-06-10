@@ -4,21 +4,23 @@
 client -> server
 - getContacts
 - addContact
+- getMessages
+- addMessage
 - disconnect
 
 server -> client
-- jstc-error
+- jstcError
 - contacts
 - contactAdded
-
+- newMessage
+- messages
  */
-
-
 
 var socketIO = require('socket.io');
 
 var authentication = require('./authentication.js');
 var userRepository = require('../database/users/repository.js');
+var messageRepository = require('../database/messages/repository.js');
 
 
 class Messenger {
@@ -30,14 +32,14 @@ class Messenger {
 			getContacts(socket, username) {
 				userRepository.getUser(username).then(function(user) {
 					socket.emit('contacts', user.contacts);
-				}.bind(this));
+				});
 			},
 
 
 			addContact(socket, username, contactName) {
 				userRepository.getUser(contactName).then(function(contact) {
 					if (!contact) {
-						socket.emit('jstc-error', 'The specified user does not exist!');
+						socket.emit('jstcError', 'The specified user does not exist!');
 						return;
 					}
 
@@ -46,11 +48,39 @@ class Messenger {
 							userRepository.addContact(username, contactName);
 							this._clients[username].sockets.forEach(function(socket) {socket.emit('contactAdded', contactName)});
 						} else {
-							socket.emit('jstc-error', 'The specified user is already on the contact list!');
+							socket.emit('jstcError', 'The specified user is already on the contact list!');
 						}
-					}.bind(this)).catch(function(error) {console.log(error)});
+					}.bind(this)).catch(function(error) { socket.emit('jstcError', 'Internal server error!')});
 
-				}.bind(this)).catch(function(error) {console.log(error)});
+				}.bind(this)).catch(function(error) { socket.emit('jstcError', 'Internal server error!')});
+			},
+
+
+			getMessages(socket, username, contactName) {
+				var participants = [username, contactName];
+				messageRepository
+					.getMessages([username, contactName])
+					.then(function(messages) {
+						socket.emit('messages', { contactName, messages });
+					})
+					.catch(function (error) {
+						socket.emit('jstcError', 'Internal server error!');
+					});
+			},
+
+
+			// message: {to: string, content: string}
+			addMessage(socket, username, message) {
+				message.from = username;
+				messageRepository
+					.addMessage(message)
+					.then(function() {
+						this._clients[username].sockets.forEach(function(socket) { socket.emit('newMessage', message) });
+						if (this._clients[message.to]) this._clients[message.to].sockets.forEach(function(socket) { socket.emit('newMessage', message) });
+					}.bind(this))
+					.catch(function (error) {
+						socket.emit('jstcError', 'Internal server error!');
+					});
 			},
 
 

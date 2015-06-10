@@ -37,27 +37,15 @@ html(lang='en', ng-app='jstChat')
 							button.btn.btn-default(type='button', ng-click='contactListCtrl.addContact(contactListCtrl.contactInput)' aria-label='Add')
 								span.glyphicon.glyphicon-plus(aria-hidden='true')
 					ul.contact-list.list-unstyled
-						li(ng-repeat='contact in contactListCtrl.contacts | filter:contactListCtrl.contactInput | orderBy') {{ contact }}
-				.col-xs-8.col-sm-9.col-sm-10
-					.message
-						span.sender-name Aladár:
-						|  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare elementum venenatis. Nullam ut eros in sem vulputate mattis in sit amet neque. Sed placerat velit nec risus volutpat, a malesuada nisl scelerisque. Praesent et nulla eget nisl venenatis laoreet. Morbi et consequat dolor. Pellentesque id purus mollis, ultricies nunc et, congue ipsum. Maecenas ultricies, purus a sagittis elementum, nunc tortor mollis ipsum, vitae rutrum nunc odio vel arcu. Maecenas blandit, leo in mattis dignissim, libero augue ornare enim, quis dictum dolor purus vel tortor. Curabitur lacus urna, placerat at placerat et, finibus eu tellus.
-					.message
-						span.sender-name Béla:
-						|  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare elementum venenatis. Nullam ut eros in sem vulputate mattis in sit amet neque. Sed placerat velit nec risus volutpat, a malesuada nisl scelerisque. Praesent et nulla eget nisl venenatis laoreet. Morbi et consequat dolor. Pellentesque id purus mollis, ultricies nunc et, congue ipsum. Maecenas ultricies, purus a sagittis elementum, nunc tortor mollis ipsum, vitae rutrum nunc odio vel arcu. Maecenas blandit, leo in mattis dignissim, libero augue ornare enim, quis dictum dolor purus vel tortor. Curabitur lacus urna, placerat at placerat et, finibus eu tellus.
-					.message
-						span.sender-name Aladár:
-						|  Lorem ipsum dolor
-					.message
-						span.sender-name Béla:
-						|  sit amet
-					.message
-						span.sender-name Aladár:
-						|  Lorem ipsum dolor
-					.message
-						span.sender-name Béla:
-						|  sit amet
-					.new-message-input
+						li(
+							ng-repeat='contact in contactListCtrl.contacts | filter:contactListCtrl.contactInput | orderBy'
+							ng-click='contactListCtrl.getMessages(contact)'
+						) {{ contact }}
+				.col-xs-8.col-sm-9.col-sm-10(ng-controller='messageList as messageListCtrl')
+					.message(ng-repeat='message in messageListCtrl.messages')
+						span.sender-name {{ message.from }}:
+						|  {{ message.content }}
+					.new-message-input(ng-show='messageListCtrl.isLoaded()')
 						form
-							textarea(rows='3')
-							button.btn.btn-primary.pull-right(type='button') Send
+							textarea(rows='3' ng-model='messageListCtrl.newMessageInput')
+							button.btn.btn-primary.pull-right(type='button' ng-click='messageListCtrl.addMessage(messageListCtrl.newMessageInput); messageListCtrl.newMessageInput = ""') Send
