@@ -1,3 +1,6 @@
+**FIGYELEM!** _A beadandót már bemutattam és már nem fejlesztem. Bár alapvetően törekedtem a rendre a kódban, nem ez volt az elsődleges cél, és a határidő közeledtével egyre inkább háttérbe szorult._
+
+
 # JST-Chat [ ![Codeship Status for emartech/mediadb](https://codeship.com/projects/7c24f9b0-ead7-0132-6365-7ee58af40c21/status?branch=master)](https://codeship.com/projects/83245)
 
 _Production: [http://jst-chat.herokuapp.com/](http://jst-chat.herokuapp.com/)_  
@@ -11,7 +14,7 @@ Beadandó feladat [JavaScript technológiák](http://webprogramozas.inf.elte.hu/
 ##Felhasznált technológiák
 * Szerver:
  * io.js
- * ES6 (class, let, Promise, enhanced object literal, tepmlate string)
+ * ES6 (class, let, Promise, enhanced object literal, template string)
  * Express (body-parser, session, router, static, views)
  * Jade
  * Passport (local strategy)
